@@ -9,7 +9,7 @@ let guesses = 0;
 btn.addEventListener('click', () => {
   guesses++;
   if (input.value == randomNum) {
-    result.innerHTML = `You guessed the number right!`;
+    result.innerHTML = `<span class="text-success">You guessed the number right!</span>`;
     input.disabled = true;
     btn.innerHTML = `Play again!`;
 
@@ -18,10 +18,10 @@ btn.addEventListener('click', () => {
       window.location.reload();
     });
   } else if (input.value > randomNum) {
-    result.innerHTML = `Your guess is to high`;
-    guessesElement.innerHTML = `Your guesses: ${guesses}`;
+    result.innerHTML = `<span class="text-danger">Your guess is to high</span>`;
+    guessesElement.innerHTML = `Your guesses: <span class="text-primary">${guesses}</span>`;
   } else if (input.value < randomNum) {
-    result.innerHTML = `Your guess is to low`;
-    guessesElement.innerHTML = `Your guesses: ${guesses}`;
+    result.innerHTML = `<span class="text-danger">Your guess is to low</span>`;
+    guessesElement.innerHTML = `Your guesses: <span class="text-primary">${guesses}</span>`;
   }
 });
